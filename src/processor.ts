@@ -124,6 +124,17 @@ export class D2Processor {
         button.buttonEl.createEl("span", {
           text: "Recompile",
         });
+
+        button.buttonEl.style.opacity = "0"; 
+        button.buttonEl.style.transition = "opacity 0.275s ease";
+
+        el.addEventListener("mouseenter", (e) => {
+            button.buttonEl.style.opacity = "1";
+        });
+
+        el.addEventListener("mouseleave", (e) => {
+            button.buttonEl.style.opacity = "0";
+        });
       }
     } catch (err) {
       el.empty();
